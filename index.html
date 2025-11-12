@@ -1058,10 +1058,13 @@
   }
 /* TESTIMONIALS (SEM FOTOS) */
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 25px;
     margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .testimonial-card {
@@ -1229,6 +1232,74 @@
             </div>
         </div>
     </section>
+
+<!-- WHAT IT'S NOT -->
+<section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
+    <div class="container">
+        <h2 style="color: #1e293b;">O que este guia NÃO é<br><span style="font-size: 1.3rem; font-weight: 500; color: #475569;">(e por que isso é bom para você!)</span></h2>
+        
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-left: 6px solid #fbbf24;">
+                
+                <div style="display: grid; gap: 15px;">
+                    <!-- Item 1 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é fórmula mágica</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Resultados exigem consistência, não milagres instantâneos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é dieta restritiva</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Aqui focamos em movimento, não em proibições alimentares.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é emagrecimento rápido</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">O objetivo é saúde e autonomia, não apenas perder quilos em dias.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é para atletas avançados</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Foi criado pensando em quem está começando do zero ou recomeçando.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não precisa de nada caro</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Sem equipamentos sofisticados, sem mensalidades, sem investimentos extras.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusão positiva -->
+                <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; border-left: 4px solid #1e40af; text-align: center;">
+                    <p style="color: #1e40af; font-size: 1.1rem; font-weight: 600; margin: 0;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 8px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        É um método honesto, prático e realista para pessoas reais que querem mudanças reais.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- PILLARS -->
     <section class="section">
