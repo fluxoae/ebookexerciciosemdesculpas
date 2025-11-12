@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Sem Desculpas - O Guia Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #fff;
+            padding-top: 70px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+       /* HEADER FIXO — branco com texto azul */
+.header-fixed {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.98);   /* barra branca */
+  padding: 15px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* leve destaque */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  backdrop-filter: blur(8px);
+}
+
+.header-fixed img {
+  height: 40px; /* mantém a logo nítida sobre o branco */
+  width: auto;
+}
+
+.header-fixed span {
+  color: #1e40af;         /* teu azul */
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+/* responsivo */
+@media (max-width: 968px) {
+  .header-fixed {
+    padding: 12px 16px;
+  }
+  .header-fixed img {
+    height: 32px;
+  }
+  .header-fixed span {
+    font-size: 1.05rem;
+  }
+}
+
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            color: white;
+            padding: 50px 20px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(251, 191, 36, 0.15);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1e293b;
+            padding: 18px 40px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(251, 191, 36, 0.6);
+        }
+        
+        /* SECTIONS */
+        .section {
+            padding: 30px 20px;
+        }
+        
+        .section-dark {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+        }
+        
+        .section-darker {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 2px;
+        }
+        
+        .section-dark h2,
+        .section-darker h2 {
+            color: white;
+        }
+        
+        /* IDENTIFICATION */
+        .identification {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 5px solid #fbbf24;
+        }
+        
+        .identification ul {
+            list-style: none;
+        }
+        
+        .identification li {
+            padding: 18px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 12px;
+            position: relative;
+            padding-left: 55px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-left: 4px solid #1e40af;
+        }
+        
+        .identification li svg {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fbbf24;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+        }
+        
+        /* METHOD WITH IMAGE */
+        .method-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .method-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 4px solid rgba(251, 191, 36, 0.5);
+        }
+        
+        .method-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .method-content h3 {
+            color: #fbbf24;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .method-content p {
+            color: white;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .method-content ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .method-content li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+            color: white;
+        }
+        
+        .method-content li svg {
+            position: absolute;
+            left: 0;
+            top: 15px;
+            color: #fbbf24;
+        }
+        
+        /* PILLARS */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .pillar-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.3s;
+            border-top: 4px solid #fbbf24;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(251, 191, 36, 0.1));
+            border-radius: 50%;
+            transition: all 0.5s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border-top-color: #1e40af;
+        }
+        
+        .pillar-card:hover::before {
+            top: -20%;
+            right: -20%;
+        }
+        
+        .pillar-card h3 {
+            color: #1e40af;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pillar-card h3 svg {
+            color: #1e40af;
+            flex-shrink: 0;
+        }
+        
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* OFFER BOX */
+        .offer-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .offer-mockup img {
+            width: 100%;
+            max-width: 500px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            border: 4px solid #1e40af;
+        }
+        
+        .offer-list {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .offer-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            border-left: 4px solid #fbbf24;
+            transition: all 0.3s;
+        }
+        
+        .offer-item:hover {
+            transform: translateX(5px);
+            border-left-color: #1e40af;
+        }
+        
+        .offer-item svg {
+            color: #1e40af;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .offer-item h3 {
+            color: #1e40af;
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+        
+        .offer-item p {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+        
+        .bonus-box {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 15px 50px rgba(251, 191, 36, 0.4);
+            border: 3px solid #f59e0b;
+        }
+        
+        .bonus-box h3 {
+            color: #1e293b;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+        
+        .bonus-box ul {
+            list-style: none;
+        }
+        
+        .bonus-box li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #1e293b;
+            font-size: 1.02rem;
+            font-weight: 600;
+        }
+        
+        .bonus-box li svg {
+            position: absolute;
+            left: 0;
+            top: 13px;
+            color: #1e293b;
+        }
+        
+        /* AUTHOR */
+        .author-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 35px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .author-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 6px solid #fbbf24;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-content h3 {
+            color: #1e40af;
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .author-content p {
+            margin-bottom: 12px;
+            color: #475569;
+            font-size: 1.02rem;
+        }
+        
+        .author-quote {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #1e40af;
+            font-style: italic;
+            color: #1e40af;
+            font-weight: 500;
+            margin: 15px 0;
+        }
+        
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .instagram-link:hover {
+            color: #3b82f6;
+            transform: translateX(5px);
+        }
+        
+        /* FOR WHO */
+        .for-who-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+        
+        .for-who-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .for-who-card:hover {
+            border-color: #fbbf24;
+            transform: scale(1.05);
+        }
+        
+        .for-who-card svg {
+            color: #fbbf24;
+            flex-shrink: 0;
+        }
+        
+        .for-who-card p {
+            font-weight: 500;
+            color: #1e293b;
+            font-size: 0.98rem;
+        }
+        
+        /* PRICE SECTION - COMPACTO */
+        .price-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            padding: 35px 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(30, 64, 175, 0.5);
+            position: relative;
+            overflow: hidden;
+            border: 4px solid #fbbf24;
+        }
+        
+        .price-box::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .price-badge {
+            background: #fbbf24;
+            color: #1e293b;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+            position: relative;
+            z-index: 1;
+	    letter-spacing: 0.5px;       /* leve espaçamento pra leitura */
+  	    text-transform: uppercase;   /* reforça o destaque */
+        }
+/* pequeno brilho de movimento */
+.price-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.price-badge:hover::after {
+  left: 100%;
+}
+        
+        .price-box .old-price {
+            text-decoration: line-through;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ef4444;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-box .new-price {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 15px 0;
+            color: #fbbf24;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-box .installments {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-box .benefits {
+            list-style: none;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 18px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .price-box .benefits li {
+            padding: 8px 0;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .price-box .benefits svg {
+            color: #fbbf24;
+        }
+        
+        .price-box .cta-button {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1e293b;
+            font-size: 1.3rem;
+            padding: 18px 45px;
+            margin-top: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.5);
+        }
+        
+        .price-box .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(251, 191, 36, 0.7);
+        }
+        
+        /* GUARANTEE - AMARELO FORTE */
+.guarantee {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  border: 4px solid #f59e0b;
+  margin-top: 30px;
+  box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+  position: relative;
+  overflow: visible; /* permite a badge “sair” um pouco pra cima */
+}
+
+/* badge agora é um container do SVG (sem <img>) */
+.guarantee-badge {
+  position: static;             /* sem absolute */
+  width: 120px;
+  height: 120px;
+  margin: -60px auto 10px;      /* sobrepõe levemente a borda superior */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: guarantee-pulse 3s ease-in-out infinite;
+}
+
+/* aplica glow e leve animação no escudo */
+.guarantee-shield {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 20px rgba(38, 58, 144, 0.4));
+  animation: guarantee-glow 2s ease-in-out infinite alternate;
+}
+
+/* hover opcional pra reforçar o efeito */
+.guarantee-badge:hover .guarantee-shield {
+  animation: guarantee-glow 0.5s ease-in-out infinite alternate;
+  transform: rotate(-5deg);
+  transition: transform 0.3s ease;
+}
+
+/* títulos e textos mantidos, só ajustei o espaçamento do h3 */
+.guarantee h3 {
+  color: #1e293b;
+  margin-bottom: 15px;
+  margin-top: 8px;              /* menor pq a badge já cria respiro */
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.guarantee svg {
+  color: #1e293b;
+}
+
+.guarantee p {
+  color: #1e293b;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* animações */
+@keyframes guarantee-pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.03); }
+}
+
+@keyframes guarantee-glow {
+  0%   { filter: drop-shadow(0 8px 20px rgba(38, 58, 144, 0.4)); }
+  100% { filter: drop-shadow(0 8px 30px rgba(253, 204, 12, 0.6)); }
+}
+
+/* responsivo: badge um pouco menor em telas estreitas */
+@media (max-width: 480px) {
+  .guarantee-badge {
+    width: 100px;
+    height: 100px;
+    margin: -50px auto 8px;
+  }
+}
+
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: #fbbf24;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: #1e40af;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            font-size: 1.05rem;
+        }
+        
+        .faq-question:hover {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        }
+        
+        .faq-question svg {
+            transition: transform 0.3s;
+            color: #fbbf24;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            color: #475569;
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .footer p {
+            margin-bottom: 12px;
+            font-size: 1.02rem;
+        }
+        
+        .footer a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #f59e0b;
+        }
+        
+        .footer-love {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .header-fixed span {
+                font-size: 1rem;
+            }
+            
+            .header-fixed img {
+                height: 32px;
+            }
+            
+            .hero-content,
+            .method-section,
+            .offer-section,
+            .author-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .pillars-grid,
+            .for-who-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-box .new-price {
+                font-size: 3.5rem;
+            }
+            
+            .price-box {
+                padding: 30px 25px;
+            }
+            
+            .author-box {
+                grid-template-columns: 1fr;
+            }
+            
+            .author-image {
+                margin: 0 auto;
+            }
+            
+            .hero-image img {
+                max-width: 300px;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .method-image img,
+            .offer-mockup img {
+                height: 350px;
+            }
+
+/* MOBILE: ajustar tamanhos e manter "Por apenas: R$ 37" na MESMA linha */
+@media (max-width: 480px) {
+  .price-box .price-badge { font-size: 0.95rem; padding: 8px 16px; }
+  .price-box .old-price    { font-size: 1.2rem; }
+  .price-box .new-price    { font-size: 2.2rem; margin-left: 6px; line-height: 1; }
+  .price-box .installments { font-size: 0.95rem; }
+  .price-box .benefits li  { font-size: 0.95rem; }
+
+  /* Tenta manter tudo na mesma linha quando suportado */
+  @supports selector(p:has(.new-price)) {
+    .price-box p:has(.new-price) { white-space: nowrap; }
+  }
+
+/* === MOBILE FINO (até 480px) === */
+@media (max-width: 480px) {
+  /* 1) Checks maiores na seção de preço */
+  .price-box .benefits {
+    padding-left: 6px;
+  }
+  .price-box .benefits li {
+    gap: 12px;                /* espaço entre ícone e texto */
+    font-size: 1rem;          /* mantém leitura boa */
+    line-height: 1.4;
+  }
+  .price-box .benefits li svg {
+    width: 26px;              /* era 18px no desktop */
+    height: 26px;
+  }
+
+  /* 2) H2 mais compactos para não quebrar em 3 linhas */
+  .section h2 {
+    font-size: 1.6rem;        /* ajuste chave */
+    line-height: 1.15;        /* deixa mais “alto” sem esticar muito */
+    margin-bottom: 22px;
+  }
+/* Notas de texto dentro do box branco (em cima e embaixo dos entregáveis) */
+.offer-note{
+  background: transparent;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  text-align: left;
+  padding: 4px 4px 8px;
+  margin: 0 0 10px 0;
+}
+
+.offer-intro{
+  border-bottom: 1px solid rgba(30,64,175,.12);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+
+.offer-outro{
+  border-top: 1px solid rgba(30,64,175,.12);
+  margin-top: 14px;
+  padding-top: 10px;
+  font-weight: 600;
+  opacity: .95;
+}
+/* Mobile */
+@media (max-width: 480px) {
+  .bonus-text-top,
+  .bonus-text-bottom {
+    font-size: 1rem;
+    margin: 10px 0 16px 0;
+  }
+.offer-text-top,
+.offer-text-bottom {
+  color: #1e3a8a; /* azul da paleta */
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.15rem;
+  margin: 10px 0;
+}
+
+.offer-text-bottom {
+  margin-top: 18px;
+  color: #1e293b; /* azul mais escuro */
+  font-weight: 600;
+}
+
+/* Responsivo — levemente menor no mobile */
+@media (max-width: 480px) {
+  .offer-text-top,
+  .offer-text-bottom {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+/* TESTIMONIALS (SEM FOTOS) */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 4rem;
+    color: #dbeafe;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    border-color: #fbbf24;
+}
+
+.testimonial-stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.02rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    font-size: 0.95rem;
+    color: #1e40af;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #dbeafe;
+}
+
+.testimonial-author strong {
+    font-size: 1.05rem;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.testimonial-author span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+}</style>
+
+</head>
+<body>
+    <!-- HEADER FIXO -->
+    <header class="header-fixed">
+        <img src="https://i.imgur.com/fKdpY4P.png" alt="Logo Exercício Sem Desculpas">
+        <span>Exercício sem Desculpas</span>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Mexer o corpo ficou impossível? Descubra como pequenas mudanças podem trazer grandes vitórias</h1>
+                    <p class="subtitle">
+                       Guia prático e realista para criar o hábito do exercício, mesmo se você acha que não tem tempo, disposição ou energia.
+                        <strong>Sem academia, sem rotina radical, sem precisar começar tudo de novo todo mês.</strong>
+                    </p>
+                    <a href="#oferta" class="cta-button">QUERO MEU GUIA PRÁTICO AGORA</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&h=700&fit=crop" alt="Ebook Exercício Sem Desculpas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDENTIFICATION -->
+    <section class="section">
+        <div class="container">
+            <h2>Você se reconhece nisso?</h2>
+            <div class="identification">
+                <ul>
+                    <li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        Você sente que está sempre "recomeçando do zero"?
+                    </li>
+                    <li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        Já tentou seguir treino milagroso, só pra largar depois de poucos dias?
+                    </li>
+                    <li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        Perde o ânimo rápido ou acha que nunca vai conseguir manter uma rotina consistente?
+                    </li>
+<li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        Sente que a rotina é pesada demais pra encaixar exercício?
+                    </li>
+
+                </ul>
+                <div class="highlight-box">
+                    Se você disse SIM para pelo menos uma dessas situações, este ebook foi feito para VOCÊ.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2>Apresento: Exercício Sem Desculpas</h2>
+            <div class="method-section">
+                <div class="method-image">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop" alt="Mulher se exercitando em casa">
+                </div>
+                <div class="method-content">
+                    <h3>Um método para pessoas comuns que buscam sair do zero</h3>
+                    <p>
+                        Eu criei o <strong>"Exercício Sem Desculpas"</strong> porque sei que a maioria das pessoas não tem tempo, odeia pressão e já cansou de tentar <em>“ser fitness de Instagram”</em>
+                    </p>
+                    <ul>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Aqui não tem dieta maluca, nem julgamos quem é iniciante
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Só estratégias que funcionam para a vida real, construídas para você ir além das tentativas frustradas.
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Validadas por histórias reais: quem saiu do sedentarismo virou exemplo de energia e sensação de vitória.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILLARS -->
+    <section class="section">
+        <div class="container">
+            <h2>Os 6 Pilares do Método</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Comece Onde Está
+                    </h3>
+                    <p>Com o que tem. Seu ponto de partida é sempre suficiente.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        Consistência > Intensidade
+                    </h3>
+                    <p>Pequenas doses repetidas vencem grandes esforços pontuais.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+                        Celebre Pequenas Vitórias
+                    </h3>
+                    <p>Cada avanço merece reconhecimento. Comemore cada sinal de progresso, não só resultados grandões.                </div>
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        Mudança é Processo
+                    </h3>
+                    <p>Tudo bem tropeçar. Entenda que a jornada não se resume a um evento isolado e ela tem altos e baixos.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        Redefina Progresso
+                    </h3>
+                    <p>Sucesso vai além da balança: saúde, energia, autonomia e bem-estar contam muiot mais.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        Envolva Sua Rede
+                    </h3>
+                    <p>Compartilhar a jornada torna tudo mais leve e aumenta seu sucesso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2>O que você recebe imediatamente:</h2>
+            <div class="offer-section">
+                <div class="offer-mockup">
+                    <img src="https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=600&h=600&fit=crop" alt="Materiais do ebook">
+                </div>
+ 
+                <div class="offer-list">
+                    <div class="offer-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <div>
+                            <h3>Ebook Completo (40+ páginas)</h3>
+                            <p>Passo a passo para criar (e manter!) o hábito do exercício</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <div>
+                            <h3>Checklist Diário de Movimento</h3>
+                            <p>Marque seus avanços e visualize sua evolução</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        <div>
+                            <h3>Diário de Pequenas Vitórias</h3>
+                            <p>Para não esquecer de onde você começou e ter registros da sua trajetória e conquistas</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                        <div>
+                            <h3>Mini-Guia de Exercícios Adaptados</h3>
+                            <p>Movimentos simples ilustrados para começar em casa com segurança</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                        <div>
+                            <h3>Lista de Micro-Ações por Ambiente</h3>
+                            <p>Pra você sair do sedentarismo sem alterar sua rotina</p>
+                        </div>
+
+
+		</div>
+	</div>   	
+        <div class="bonus-box">
+                <h3>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                    Bônus Especiais (só nesta página)
+                </h3>
+                <ul>
+                    <li>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+                        Planilha de controle de progresso (digital/editável)
+                    </li>
+                    <li>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+                        Modelo de mensagens de autoestima para usar consigo mesma
+                    </li>
+                    <li>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg>
+                        Plano 7 Dias de Pequenas Vitórias (roteiro para começar já!)
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#oferta" class="cta-button">QUERO TODOS OS BÔNUS AGORA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section class="section">
+        <div class="container">
+            <h2>Quem vai te guiar nessa jornada</h2>
+            <div class="author-box">
+                <div class="author-image">
+                    <img src="https://i.imgur.com/Gp0rzKC.jpeg" alt="Aninha Koetz">
+                </div>
+                <div class="author-content">
+                    <h3>Aninha Koetz</h3>
+                    <p><strong>Professora de Educação Física | Pós-graduada em Fisiologia do Exercício</strong></p>
+                    <p>
+                        Com mais de 20 anos de experiência, ajudei centenas de pessoas a saírem do sedentarismo 
+                        através de mudanças reais e possíveis. Mãe de dois, empreendedora e prova viva de que 
+                        é possível recomeçar em qualquer fase da vida.
+                    </p>
+                    <div class="author-quote">
+                        "Minha missão é mostrar que o movimento é possível para toda pessoa, em qualquer fase."
+                    </div>
+                    <a href="https://www.instagram.com/fluxo.assessoria" target="_blank" class="instagram-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        @fluxo.assessoria
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOR WHO -->
+    <section class="section section-darker">
+        <div class="container">
+            <h2>Este ebook é para você se:</h2>
+            <div class="for-who-grid">
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>Quer autonomia e saúde para todas as fases da vida</p>
+                </div>
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>Já tentou várias vezes, mas sempre desistiu</p>
+                </div>
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>É mãe, sem tempo, mas tem vontade de mudar</p>
+                </div>
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>Acha que <em>não nasceu para exercício</em> ou nunca se sentiu bem em academias</p>
+                </div>
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>Quer sair do sedentarismo com leveza e realismo</p>
+                </div>
+                <div class="for-who-card">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <p>Busca envelhecer com dignidade, liberdade e energia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ============================================ -->
+<!-- SEÇÃO DE DEPOIMENTOS (SEM FOTOS) -->
+<!-- ============================================ -->
+
+<!-- TESTIMONIALS -->
+<section class="section">
+    <div class="container">
+        <h2>Quem já transformou a vida com este método</h2>
+        <p style="text-align: center; color: #475569; font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Histórias reais de quem escolheu dar o primeiro passo
+        </p>
+        
+        <div class="testimonials-grid">
+            <!-- Depoimento 1 - Carla (PRÁTICO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                    "Eu achava que nunca ia conseguir encaixar exercício na minha rotina de mãe. Com o método da Aninha, comecei com 10 minutos pela manhã e hoje já consigo me movimentar 4x por semana sem culpa! O melhor: tenho mais energia pra brincar com meus filhos."
+                </p>
+                <p class="testimonial-author">
+                    <strong>Carla Silva</strong>, 38 anos<br>
+                    <span>Publicitária e mãe de 2</span>
+                </p>
+            </div>
+
+            <!-- Depoimento 2 - Ricardo (EMOCIONAL) -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                    "Passei anos me sentindo fracassado por não conseguir manter uma rotina. Este ebook me devolveu a autoestima. Hoje olho no espelho e me orgulho de cada pequena conquista. Não mudei só o corpo, mudei minha relação comigo mesmo."
+                </p>
+                <p class="testimonial-author">
+                    <strong>Ricardo Mendes</strong>, 45 anos<br>
+                    <span>Contador</span>
+                </p>
+            </div>
+
+            <!-- Depoimento 3 - Juliana (PRÁTICO) -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                    "Nunca gostei de academia e achava que exercício não era pra mim. O 'Exercício Sem Desculpas' me ensinou que dá pra começar em casa, no meu ritmo. 3 meses depois, já perdi 6kg e me sinto com muito mais disposição!"
+                </p>
+                <p class="testimonial-author">
+                    <strong>Juliana Costa</strong>, 42 anos<br>
+                    <span>Professora</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- PRICE/OFFER -->
+    <section class="section" id="oferta">
+        <div class="container">
+            <h2>Investimento na sua transformação</h2>
+            <div class="price-container">
+                <div class="price-box">
+                    <div class="price-badge">🔥 OFERTA ESPECIAL 🔥</div>
+
+                   <!-- Bloco de preço centralizado e com espaçamento balanceado -->
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+<!-- BLOCO DE PREÇO CENTRALIZADO -->
+<div style="text-align: center; margin-bottom: 8px;">
+
+  <p style="color: white; font-size: 1.1rem; margin: 0 0 4px 0;">
+    De: <span class="old-price">R$ 97,00</span>
+  </p>
+
+  <p style="color: white; font-size: 1.3rem; font-weight: 700; margin: 0 0 6px 0;">
+    Por apenas: <span class="new-price">R$ 37</span>
+  </p>
+
+  <p class="installments" style="margin: 0;">
+    Pagamento único e <strong>acesso vitalício</strong> ao material completo
+  </p>
+
+</div>
+                    
+                    <ul class="benefits">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Acesso imediato após a compra
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Leia no celular, tablet ou computador
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Todos os bônus inclusos
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="cta-button">QUERO MEU GUIA POR R$ 37!</a>
+                </div>
+                
+                <div class="guarantee">
+                    <div class="guarantee-badge">
+  <svg class="guarantee-shield" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Garantia de 7 Dias">
+    <path d="M60 10 L10 30 L10 70 Q10 110 60 130 Q110 110 110 70 L110 30 Z"
+          fill="#263a90" stroke="#fdcc0c" stroke-width="3"/>
+    <path d="M60 20 L20 35 L20 70 Q20 100 60 115 Q100 100 100 70 L100 35 Z"
+          fill="none" stroke="#fdcc0c" stroke-width="1.5" opacity="0.3"/>
+    <text x="60" y="60" text-anchor="middle"
+          fill="#fdcc0c" font-size="24" font-weight="900"
+          font-family="'Segoe UI', Arial, sans-serif">7 DIAS</text>
+    <text x="60" y="85" text-anchor="middle"
+          fill="#ffffff" font-size="14" font-weight="700"
+          font-family="'Segoe UI', Arial, sans-serif" letter-spacing="2">GARANTIA</text>
+    <path d="M45 95 L52 102 L75 75"
+          fill="none" stroke="#fdcc0c" stroke-width="4"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+                    <h3>Garantia de 7 Dias</h3>
+                    <p>
+                       Confio tanto no que ensino que te dou 7 dias para decidir sem risco — se não encaixar com sua realidade, reembolso total, sem burocracia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Preciso de equipamentos ou academia?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! O ebook foi criado justamente para quem não tem acesso a academia ou equipamentos. Tudo pode ser feito em casa, com o próprio corpo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Nunca fiz exercício na vida. Vai funcionar pra mim?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SIM! O método é feito especialmente para iniciantes, começamos juntos do zero, respeitando seu ritmo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Quanto tempo por dia preciso dedicar?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você decide! Você faz o tempo que cabe no seu dia — pode ser 5, 10 ou 15 minutos. O importante é a consistência, não a duração.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como recebo o ebook?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Imediatamente após a compra, você recebe por email o link para download em PDF. Pode ler em qualquer dispositivo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>E se eu não gostar?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Você tem 7 dias de garantia total. Se não ficar satisfeita, basta pedir reembolso e devolvemos 100% do valor.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Serve para quem tem problemas de saúde?</span>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O ebook traz orientações gerais e adaptáveis, mas sempre recomendamos consultar um médico antes de iniciar qualquer programa de exercícios, especialmente se houver condições de saúde específicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: white; padding: 50px 20px;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; font-size: 2.1rem; margin-bottom: 20px;">
+                Sua transformação começa hoje
+            </h2>
+            <p style="font-size: 1.15rem; margin-bottom: 30px; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                Não espere segunda-feira. Não espere o "momento perfeito".<br>
+                O futuro que você merece começa com a escolha de agora.
+            </p>
+            <a href="#oferta" class="cta-button" style="font-size: 1.25rem; padding: 20px 45px;">
+                SIM, QUERO MUDAR MINHA VIDA AGORA
+            </a>
+            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.9;">
+                ✓ Acesso imediato • ✓ Garantia de 7 dias • ✓ Todos os bônus inclusos
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="https://i.imgur.com/S0VHr1w.png" alt="Logo Fluxo Assessoria">
+            </div>
+            <p>© 2024 Aninha Koetz - Exercício Sem Desculpas. Todos os direitos reservados.</p>
+            <p style="margin-top: 12px;">
+                <a href="https://www.instagram.com/fluxo.assessoria" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 5px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Instagram: @fluxo.assessoria
+                </a>
+            </p>
+            <p class="footer-love">Feito com ❤️ por @fluxo.assessoria</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('svg');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question svg').forEach(item => {
+                if (item !== icon) {
+                    item.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            
+            // Rotate icon
+            if (answer.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
