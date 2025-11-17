@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1060,6 +1061,10 @@
 }
 }
 
+
+}
+}
+}
 /* === DEPOIMENTOS (3 colunas responsivo) === */
 .testimonials-grid {
   display: grid;
@@ -1071,7 +1076,7 @@
   margin-right: auto;
 }
 
-..testimonial-card {
+.testimonial-card {
   background: white;
   padding: 40px 30px;
   border-radius: 20px;
@@ -1148,7 +1153,223 @@
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+/* === SEÇÃO DEPOIMENTOS (DARK) === */
+.testimonials-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  padding: 40px 0; /* pouco espaçamento */
+  color: #fff;
+  text-align: center;
 }
+
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.testimonials-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #fbbf24;
+  margin: 12px auto 20px;
+  border-radius: 2px;
+}
+
+.testimonials-subtitle {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 40px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  color: #475569;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(30, 58, 138, 0.08);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+.testimonial-stars {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  border-top: 1px solid rgba(30, 58, 138, 0.2);
+  padding-top: 15px;
+}
+
+.testimonial-author strong {
+  color: #1e40af;
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.testimonial-author span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 968px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-section { padding: 35px 0; }
+}
+
+}
+
+/* === SEÇÃO DEPOIMENTOS (DARK) — APENAS ESTA SEÇÃO === */
+.testimonials-section {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  padding: 40px 0;
+  color: #fff;
+  text-align: center;
+}
+.testimonials-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  position: relative;
+}
+.testimonials-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #fbbf24;
+  margin: 12px auto 20px;
+  border-radius: 2px;
+}
+.testimonials-subtitle {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 28px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 0 15px rgba(255,255,255,.15);
+  color: #475569;
+  text-align: center;
+  position: relative;
+  transition: all .3s ease;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(30,58,138,.08);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255,255,255,.25);
+}
+.testimonial-stars {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.testimonial-author {
+  border-top: 1px solid rgba(30,58,138,.2);
+  padding-top: 14px;
+}
+.testimonial-author strong {
+  color: #1e40af;
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.testimonial-author span {
+  color: #64748b;
+  font-size: .9rem;
+}
+
+/* Responsivo específico da seção */
+@media (max-width: 968px){
+  .testimonials-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 640px){
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-section { padding: 32px 0; }
+}
+
+
+/* Override the existing inline yellow background for the old testimonials section */
+section[style*="#fefce8"][style*="#fffbea"] {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+  padding: 40px 0 !important;
+  color: #ffffff;
+}
+section[style*="#fefce8"][style*="#fffbea"] h2,
+section[style*="#fefce8"][style*="#fffbea"] p { color: #ffffff; }
+section[style*="#fefce8"][style*="#fffbea"] .testimonials-subtitle { color: #e2e8f0; }
+
 </style>
 
 </head>
@@ -1501,67 +1722,36 @@
 <!-- ============================================ -->
 <!-- SEÇÃO DE DEPOIMENTOS (VERSÃO OTIMIZADA) -->
 <!-- ============================================ -->
-<section class="section" style="background: linear-gradient(135deg, #fefce8 0%, #fffbea 100%); padding: 80px 20px;">
+<section class="section testimonials-section" id="depoimentos">
   <div class="container">
-    <h2 style="text-align: center; color: #1e293b; font-size: 2rem; margin-bottom: 15px;">
-      Quem já transformou a vida com este método
-    </h2>
-    <p style="text-align: center; color: #475569; font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-      Histórias reais de quem escolheu dar o primeiro passo
-    </p>
+    <h2 class="testimonials-title">Quem já cruzou sua linha de chegada</h2>
+    <p class="testimonials-subtitle">Resultados reais de quem decidiu dar o primeiro passo</p>
 
-    <div class="testimonials-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important;">
-      <!-- Depoimento 1 -->
+    <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-</div>
-        <div class="testimonial-text">
-          “Antes eu achava que nunca ia conseguir ser constante. Hoje o exercício faz parte da minha rotina.”
-        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Comecei com 5 minutos. Em duas semanas, já conseguia 20 sem sofrer. A sensação de vitória é diária."</p>
         <div class="testimonial-author">
-          <strong>Carla M.</strong>
-          <span>Curitiba/PR</span>
+          <strong>Carla Andrade</strong>
+          <span>Mãe de 2</span>
         </div>
       </div>
 
-      <!-- Depoimento 2 -->
       <div class="testimonial-card">
-        <div class="testimonial-stars">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-</div>
-        <div class="testimonial-text">
-          “O guia me mostrou que começar pequeno é suficiente. Finalmente parei de desistir toda semana!”
-        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Eu odiava exercício. Hoje faço no intervalo do café. Parei de ‘recomeçar’ toda segunda."</p>
         <div class="testimonial-author">
-          <strong>Luciana F.</strong>
-          <span>São Paulo/SP</span>
+          <strong>Marcos T.</strong>
+          <span>Iniciante</span>
         </div>
       </div>
 
-      <!-- Depoimento 3 -->
       <div class="testimonial-card">
-       <div class="testimonial-stars">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-</div>
-        <div class="testimonial-text">
-          “Nunca gostei de academia, mas encontrei formas simples de me movimentar em casa — e estou amando.”
-        </div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Sem academia, sem culpa. Pela primeira vez, virei a pessoa que cumpre o combinado comigo."</p>
         <div class="testimonial-author">
-          <strong>Renata S.</strong>
-          <span>Porto Alegre/RS</span>
+          <strong>Bárbara R.</strong>
+          <span>41 anos</span>
         </div>
       </div>
     </div>
