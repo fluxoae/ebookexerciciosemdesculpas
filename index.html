@@ -916,6 +916,7 @@
             .header-fixed span {
                 font-size: 1rem;
             }
+
             
             .header-fixed img {
                 height: 32px;
@@ -1055,93 +1056,100 @@
   .offer-text-bottom {
     font-size: 1rem;
     margin: 8px 0;
-  }
-/* TESTIMONIALS (SEM FOTOS) */
-.testimonials-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 25px;
-    margin-top: 40px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+ }
+}
 }
 
-.testimonial-card {
-    background: white;
-    padding: 35px 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-    position: relative;
+/* === DEPOIMENTOS (3 colunas responsivo) === */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+..testimonial-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
 }
 
 .testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    font-size: 4rem;
-    color: #dbeafe;
-    font-family: Georgia, serif;
-    line-height: 1;
+  content: '"';
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(251, 191, 36, 0.08);
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-    border-color: #fbbf24;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 50px rgba(30, 64, 175, 0.12);
+  border-color: #fbbf24;
 }
 
 .testimonial-stars {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
 }
 
 .testimonial-text {
-    font-size: 1.02rem;
-    color: #475569;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
+  font-size: 1.02rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-author {
-    font-size: 0.95rem;
-    color: #1e40af;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 2px solid #dbeafe;
+  font-size: 0.95rem;
+  color: #1e40af;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #dbeafe;
 }
 
 .testimonial-author strong {
-    font-size: 1.05rem;
-    display: block;
-    margin-bottom: 3px;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 3px;
+  color: #1e293b;
 }
 
 .testimonial-author span {
-    color: #64748b;
-    font-size: 0.9rem;
+  color: #64748b;
+  font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
+/* Responsivo */
 @media (max-width: 968px) {
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .testimonial-card {
-        padding: 30px 20px;
-    }
-}</style>
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 </head>
 <body>
@@ -1233,73 +1241,6 @@
         </div>
     </section>
 
-<!-- WHAT IT'S NOT -->
-<section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
-    <div class="container">
-        <h2 style="color: #1e293b;">O que este guia NÃO é<br><span style="font-size: 1.3rem; font-weight: 500; color: #475569;">(e por que isso é bom para você!)</span></h2>
-        
-        <div style="max-width: 900px; margin: 0 auto;">
-            <div style="background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-left: 6px solid #fbbf24;">
-                
-                <div style="display: grid; gap: 15px;">
-                    <!-- Item 1 -->
-                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        <div>
-                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é fórmula mágica</strong>
-                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Resultados exigem consistência, não milagres instantâneos.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        <div>
-                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é dieta restritiva</strong>
-                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Aqui focamos em movimento, não em proibições alimentares.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        <div>
-                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é emagrecimento rápido</strong>
-                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">O objetivo é saúde e autonomia, não apenas perder quilos em dias.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        <div>
-                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é para atletas avançados</strong>
-                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Foi criado pensando em quem está começando do zero ou recomeçando.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 5 -->
-                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                        <div>
-                            <strong style="color: #1e293b; font-size: 1.05rem;">Não precisa de nada caro</strong>
-                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Sem equipamentos sofisticados, sem mensalidades, sem investimentos extras.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Conclusão positiva -->
-                <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; border-left: 4px solid #1e40af; text-align: center;">
-                    <p style="color: #1e40af; font-size: 1.1rem; font-weight: 600; margin: 0;">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 8px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        É um método honesto, prático e realista para pessoas reais que querem mudanças reais.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 
     <!-- PILLARS -->
     <section class="section">
@@ -1398,7 +1339,8 @@
 
 
 		</div>
-	</div>   	
+	</div> 
+  	
         <div class="bonus-box">
                 <h3>
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
@@ -1422,34 +1364,6 @@
             
             <div style="text-align: center; margin-top: 30px;">
                 <a href="#oferta" class="cta-button">QUERO TODOS OS BÔNUS AGORA</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUTHOR -->
-    <section class="section">
-        <div class="container">
-            <h2>Quem vai te guiar nessa jornada</h2>
-            <div class="author-box">
-                <div class="author-image">
-                    <img src="https://i.imgur.com/Gp0rzKC.jpeg" alt="Aninha Koetz">
-                </div>
-                <div class="author-content">
-                    <h3>Aninha Koetz</h3>
-                    <p><strong>Professora de Educação Física | Pós-graduada em Fisiologia do Exercício</strong></p>
-                    <p>
-                        Com mais de 20 anos de experiência, ajudei centenas de pessoas a saírem do sedentarismo 
-                        através de mudanças reais e possíveis. Mãe de dois, empreendedora e prova viva de que 
-                        é possível recomeçar em qualquer fase da vida.
-                    </p>
-                    <div class="author-quote">
-                        "Minha missão é mostrar que o movimento é possível para toda pessoa, em qualquer fase."
-                    </div>
-                    <a href="https://www.instagram.com/fluxo.assessoria" target="_blank" class="instagram-link">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        @fluxo.assessoria
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -1487,74 +1401,171 @@
         </div>
     </section>
 
-<!-- ============================================ -->
-<!-- SEÇÃO DE DEPOIMENTOS (SEM FOTOS) -->
-<!-- ============================================ -->
-
-<!-- TESTIMONIALS -->
-<section class="section">
+<!-- WHAT IT'S NOT -->
+<section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);">
     <div class="container">
-        <h2>Quem já transformou a vida com este método</h2>
-        <p style="text-align: center; color: #475569; font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Histórias reais de quem escolheu dar o primeiro passo
-        </p>
+        <h2 style="color: #1e293b;">O que este guia NÃO é<br><span style="font-size: 1.3rem; font-weight: 500; color: #475569;">(e por que isso é bom para você!)</span></h2>
         
-        <div class="testimonials-grid">
-            <!-- Depoimento 1 - Carla (PRÁTICO) -->
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-text">
-                    "Eu achava que nunca ia conseguir encaixar exercício na minha rotina de mãe. Com o método da Aninha, comecei com 10 minutos pela manhã e hoje já consigo me movimentar 4x por semana sem culpa! O melhor: tenho mais energia pra brincar com meus filhos."
-                </p>
-                <p class="testimonial-author">
-                    <strong>Carla Silva</strong>, 38 anos<br>
-                    <span>Publicitária e mãe de 2</span>
-                </p>
-            </div>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-left: 6px solid #fbbf24;">
+                
+                <div style="display: grid; gap: 15px;">
+                    <!-- Item 1 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é fórmula mágica</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Resultados exigem consistência, não milagres instantâneos.</p>
+                        </div>
+                    </div>
 
-            <!-- Depoimento 2 - Ricardo (EMOCIONAL) -->
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-text">
-                    "Passei anos me sentindo fracassado por não conseguir manter uma rotina. Este ebook me devolveu a autoestima. Hoje olho no espelho e me orgulho de cada pequena conquista. Não mudei só o corpo, mudei minha relação comigo mesmo."
-                </p>
-                <p class="testimonial-author">
-                    <strong>Ricardo Mendes</strong>, 45 anos<br>
-                    <span>Contador</span>
-                </p>
-            </div>
+                    <!-- Item 2 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é dieta restritiva</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Aqui focamos em movimento, não em proibições alimentares.</p>
+                        </div>
+                    </div>
 
-            <!-- Depoimento 3 - Juliana (PRÁTICO) -->
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <!-- Item 3 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é emagrecimento rápido</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">O objetivo é saúde e autonomia, não apenas perder quilos em dias.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não é para atletas avançados</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Foi criado pensando em quem está começando do zero ou recomeçando.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div style="display: flex; align-items: start; gap: 15px; padding: 15px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <div>
+                            <strong style="color: #1e293b; font-size: 1.05rem;">Não precisa de nada caro</strong>
+                            <p style="color: #475569; margin: 5px 0 0 0; font-size: 0.95rem;">Sem equipamentos sofisticados, sem mensalidades, sem investimentos extras.</p>
+                        </div>
+                    </div>
                 </div>
-                <p class="testimonial-text">
-                    "Nunca gostei de academia e achava que exercício não era pra mim. O 'Exercício Sem Desculpas' me ensinou que dá pra começar em casa, no meu ritmo. 3 meses depois, já perdi 6kg e me sinto com muito mais disposição!"
-                </p>
-                <p class="testimonial-author">
-                    <strong>Juliana Costa</strong>, 42 anos<br>
-                    <span>Professora</span>
-                </p>
+
+                <!-- Conclusão positiva -->
+                <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 12px; border-left: 4px solid #1e40af; text-align: center;">
+                    <p style="color: #1e40af; font-size: 1.1rem; font-weight: 600; margin: 0;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: middle; margin-right: 8px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        É um método honesto, prático e realista para pessoas reais que querem mudanças reais.
+                    </p>
+                </div>
+
             </div>
         </div>
     </div>
+</section>
+
+ <!-- AUTHOR -->
+    <section class="section">
+        <div class="container">
+            <h2>Quem vai te guiar nessa jornada</h2>
+            <div class="author-box">
+                <div class="author-image">
+                    <img src="https://i.imgur.com/Gp0rzKC.jpeg" alt="Aninha Koetz">
+                </div>
+                <div class="author-content">
+                    <h3>Aninha Koetz</h3>
+                    <p><strong>Professora de Educação Física | Pós-graduada em Fisiologia do Exercício</strong></p>
+                    <p>
+                        Com mais de 20 anos de experiência, ajudei centenas de pessoas a saírem do sedentarismo 
+                        através de mudanças reais e possíveis. Mãe de dois, empreendedora e prova viva de que 
+                        é possível recomeçar em qualquer fase da vida.
+                    </p>
+                    <div class="author-quote">
+                        "Minha missão é mostrar que o movimento é possível para toda pessoa, em qualquer fase."
+                    </div>
+                    <a href="https://www.instagram.com/fluxo.assessoria" target="_blank" class="instagram-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        @fluxo.assessoria
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ============================================ -->
+<!-- SEÇÃO DE DEPOIMENTOS (VERSÃO OTIMIZADA) -->
+<!-- ============================================ -->
+<section class="section" style="background: linear-gradient(135deg, #fefce8 0%, #fffbea 100%); padding: 80px 20px;">
+  <div class="container">
+    <h2 style="text-align: center; color: #1e293b; font-size: 2rem; margin-bottom: 15px;">
+      Quem já transformou a vida com este método
+    </h2>
+    <p style="text-align: center; color: #475569; font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Histórias reais de quem escolheu dar o primeiro passo
+    </p>
+
+    <div class="testimonials-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important;">
+      <!-- Depoimento 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+</div>
+        <div class="testimonial-text">
+          “Antes eu achava que nunca ia conseguir ser constante. Hoje o exercício faz parte da minha rotina.”
+        </div>
+        <div class="testimonial-author">
+          <strong>Carla M.</strong>
+          <span>Curitiba/PR</span>
+        </div>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+</div>
+        <div class="testimonial-text">
+          “O guia me mostrou que começar pequeno é suficiente. Finalmente parei de desistir toda semana!”
+        </div>
+        <div class="testimonial-author">
+          <strong>Luciana F.</strong>
+          <span>São Paulo/SP</span>
+        </div>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="testimonial-card">
+       <div class="testimonial-stars">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fbbf24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+</div>
+        <div class="testimonial-text">
+          “Nunca gostei de academia, mas encontrei formas simples de me movimentar em casa — e estou amando.”
+        </div>
+        <div class="testimonial-author">
+          <strong>Renata S.</strong>
+          <span>Porto Alegre/RS</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
     <!-- PRICE/OFFER -->
